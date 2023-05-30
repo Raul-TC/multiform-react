@@ -6,9 +6,6 @@ const Plan = ({ name, url, period, plan, isMonth }) => {
   const currentPrice = period[isMonth ? 0 : 1].price
 
   useEffect(() => {
-    // change.current = true
-    // if (change) {
-    // }
     handleUpdatePlan({ name, currentPrice })
   }, [isMonth])
 

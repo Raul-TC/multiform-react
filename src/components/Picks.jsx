@@ -8,9 +8,6 @@ const Picks = ({ name, price, description, isMonth, addOns }) => {
   const includes = getName.includes(name)
 
   useEffect(() => {
-    // change.current = true
-    // if (change) {
-    // }
     handleUpdatePick({ name, currentPrice })
   }, [isMonth])
 

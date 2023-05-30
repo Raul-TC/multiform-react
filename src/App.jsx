@@ -6,7 +6,7 @@ function App () {
   // const { state, handleInputChange, steps } = useStep()
 
   return (
-    <div className='bg-light-blue min-h-screen font-Ubuntu '>
+    <div className='bg-magnolia min-h-screen font-Ubuntu '>
       {/* <Header state={state} steps={steps} /> */}
       <Header />
       <div>
