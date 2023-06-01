@@ -18,7 +18,7 @@ export function usePlan () {
         price: 90,
         montsFree: 2
       }],
-      image: './images/icon-arcade.svg'
+      image: 'src/images/icon-arcade.svg'
     },
     {
       type: 'Advanced',
@@ -34,7 +34,7 @@ export function usePlan () {
         price: 120,
         montsFree: 2
       }],
-      image: './images/icon-advanced.svg'
+      image: 'src/images/icon-advanced.svg'
 
     },
     {
@@ -51,7 +51,7 @@ export function usePlan () {
         price: 150,
         montsFree: 2
       }],
-      image: './images/icon-pro.svg'
+      image: 'src/images/icon-pro.svg'
 
     }
   ]

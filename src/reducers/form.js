@@ -8,7 +8,8 @@ export const formInitialState = {
     isMonth: true,
     picks: []
   },
-  errors: {}
+  errors: {},
+  completed: false
 }
 
 export const FORM_ACTION_TYPES = {
@@ -19,7 +20,9 @@ export const FORM_ACTION_TYPES = {
   UPDATEPLAN: 'UPDATE_PLAN',
   ADDPICK: 'ADDPICK',
   UPDATEPICK: 'UPDATEPICK',
-  HANDLE_ERRORS: 'HANDLE_ERRORS'
+  HANDLE_ERRORS: 'HANDLE_ERRORS',
+  COMPLETED: 'COMPLETED',
+  CHANGEPLAN: 'CHANGE_PLAN'
 }
 
 // const handleFormErrors = (form) => {
@@ -165,23 +168,36 @@ export const formReducer = (state, action) => {
         errors.name = 'El campo Nombre solo acepta letras y espacios en blanco.'
       }
       if (!state.form.name.trim()) {
-        errors.name = 'El campo Nombre es requerido'
+        errors.name = 'This field is required'
       }
 
       if (!regexEmail.test(state.form.email.trim())) {
         errors.email = 'El campo Correo es incorrecto.'
       }
       if (!state.form.email.trim()) {
-        errors.email = 'El campo Correo es requerido'
+        errors.email = 'This field is required'
       }
       if (!regexTelefono.test(state.form.phone.trim())) {
         errors.phone = 'El campo Teléfono solo acepta 10 números'
       }
       if (!state.form.phone.trim()) {
-        errors.phone = 'El campo Teléfono es requerido'
+        errors.phone = 'This field is required'
       }
 
       return { ...state, errors }
+    }
+
+    case FORM_ACTION_TYPES.COMPLETED: {
+      return {
+        ...state,
+        completed: true
+      }
+    }
+    case FORM_ACTION_TYPES.CHANGEPLAN: {
+      return {
+        ...state,
+        currentStep: 2
+      }
     }
   }
   return state

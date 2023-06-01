@@ -6,14 +6,16 @@ function App () {
   // const { state, handleInputChange, steps } = useStep()
 
   return (
-    <div className='bg-magnolia min-h-screen font-Ubuntu '>
+    <div className='bg-magnolia min-h-screen h-[100vh] overflow-scroll font-Ubuntu w-full md:flex md:items-center justify-between'>
       {/* <Header state={state} steps={steps} /> */}
-      <Header />
-      <div>
+      <div className='md:flex md:justify-center md:w-[930px] md:m-auto md:h-fit md:py-6 gap-10 md:bg-white md:rounded-xl'>
+        <Header />
         {/* <FormLayout state={state} handleInputChange={handleInputChange} /> */}
-        <FormLayout />
+        <div className='md:flex flex-col justify-center'>
+          <FormLayout />
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
 
   )

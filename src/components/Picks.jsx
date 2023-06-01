@@ -12,8 +12,8 @@ const Picks = ({ name, price, description, isMonth, addOns }) => {
   }, [isMonth])
 
   return (
-    <div className={` ${includes ? 'border-marine-blue' : 'border-cool-gray'} flex items-center justify-between w-full gap-2 px-3 py-2 pl-2 rounded-md border-[1px] cursor-pointer font-bold`} onClick={() => handleAddPick({ name, currentPrice })}>
-      <input type='checkbox' name='' id='' className='bg-red-300 w-6 h-6' checked={includes} readOnly />
+    <div className={` ${includes ? 'border-marine-blue bg-magnolia' : 'border-cool-gray'} flex items-center justify-between w-full gap-2 px-3 py-2 pl-2 rounded-md border-[1px] cursor-pointer font-bold md:py-4 md:px-4`} onClick={() => handleAddPick({ name, currentPrice })}>
+      <input type='checkbox' name='' id='' className='w-6 h-6' checked={includes} readOnly />
       <div className='flex flex-col items-start justify-start w-[calc(100%-79.61px)]'>
         <p className='text-marine-blue'>{name}</p>
         <p className='font-normal text-xs text-cool-gray'>{description}</p>

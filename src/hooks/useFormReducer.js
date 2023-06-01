@@ -39,5 +39,13 @@ export function useFormReducer () {
   const handleErrors = () => dispatch({
     typeAction: FORM_ACTION_TYPES.HANDLE_ERRORS
   })
-  return { state, handleInputChange, handleChangeStep, handleChangeMonth, handlePlan, handleUpdatePlan, handleAddPick, handleUpdatePick, handleErrors }
+
+  const completedForm = () => dispatch({
+    typeAction: FORM_ACTION_TYPES.COMPLETED
+  })
+
+  const handleChangePlan = () => dispatch({
+    typeAction: FORM_ACTION_TYPES.CHANGEPLAN
+  })
+  return { state, handleInputChange, handleChangeStep, handleChangeMonth, handlePlan, handleUpdatePlan, handleAddPick, handleUpdatePick, handleErrors, completedForm, handleChangePlan }
 }

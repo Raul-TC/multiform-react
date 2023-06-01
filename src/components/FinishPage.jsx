@@ -2,7 +2,7 @@ import React from 'react'
 import { useStep } from '../hooks/useStep'
 
 const FinishPage = ({ isMonth }) => {
-  const { state: { form } } = useStep()
+  const { state: { form }, handleChangePlan } = useStep()
   const price01 = form.picks[0] ? form.picks[0].value : 0
   const price02 = form.picks[1] ? form.picks[1].value : 0
   const price03 = form.picks[2] ? form.picks[2].value : 0
@@ -15,7 +15,7 @@ const FinishPage = ({ isMonth }) => {
         <div className='flex justify-between items-center border-b-[1px] border-light-gray pb-4'>
           <div>
             <h1 className='font-bold text-marine-blue'>{form.plan.name} ({isMonth ? 'Monthly' : 'Yearly'})</h1>
-            <span className='underline text-cool-gray font-bold'>Change</span>
+            <span className='underline text-cool-gray font-bold cursor-pointer' onClick={handleChangePlan}>Change</span>
           </div>
           <span className='font-bold text-marine-blue mb-4'>${form.plan.value}/{isMonth ? 'mo' : 'yr'}</span>
         </div>
@@ -28,7 +28,7 @@ const FinishPage = ({ isMonth }) => {
         <p className='text-cool-gray'>
           Total({isMonth ? 'per month' : 'per yearly'})
         </p>
-        <p className='text-purpish-blue font-bold'>+${total}/{isMonth ? 'mo' : 'yr'}</p>
+        <p className='text-purpish-blue font-bold md:text-xl'>+${total}/{isMonth ? 'mo' : 'yr'}</p>
       </div>
     </>
   )
