@@ -13,15 +13,15 @@ const FormLayout = () => {
   const { picks } = usePicks()
   const isMonth = form.isMonth
   return (
-    <form action='' className={`w-[90%] m-auto bg-white rounded-md py-5 px-4 -mt-[65px] md:m-0 md:h-full md:w-[571px] mb-24 ${completed ? 'md:items-center md:justify-center md:h-full bg-red-300' : ''}`}>
+    <form className={`w-[90%] m-auto bg-white rounded-md py-5 px-4 -mt-[65px] md:m-0 md:h-full md:w-[571px] mb-24 ${completed ? 'md:items-center md:justify-center md:h-full bg-red-300' : ''}`}>
       <div className={`${currentStep === 1 ? 'flex' : 'hidden'} flex flex-col gap-3 md:gap-5`}>
         <h1 className='text-2xl font-bold text-marine-blue'>Personal Info</h1>
         <h2 className='text-cool-gray'>Personal info Please provide your name, email address, and phone number.</h2>
         <label htmlFor='name' className='flex flex-col text-marine-blue font-medium'>
-          <div className='flex justify-between'>
+          <span className='flex justify-between'>
             <p>Name</p>
             {errors.name && <p className='text-red-500 text-end font-bold'>{errors.name}</p>}
-          </div>
+          </span>
           <input
             onChange={(e) => {
               handleInputChange(e)
@@ -30,10 +30,10 @@ const FormLayout = () => {
           />
         </label>
         <label htmlFor='email' className='flex flex-col text-marine-blue font-medium'>
-          <div className='flex justify-between'>
+          <span className='flex justify-between'>
             <p>Email Address</p>
             {errors.email && <p className='text-red-500 text-end font-bold'>{errors.email}</p>}
-          </div>
+          </span>
           <input
             onChange={(e) => {
               handleInputChange(e)
@@ -43,15 +43,15 @@ const FormLayout = () => {
         </label>
 
         <label htmlFor='phone' className='flex flex-col text-marine-blue font-medium'>
-          <div className='flex justify-between'>
+          <span className='flex justify-between'>
             <p>Phone Number</p>
             {errors.phone && <p className='text-red-500 text-end font-bold'>{errors.phone}</p>}
-          </div>          <input
+          </span>          <input
             onChange={(e) => {
               handleInputChange(e)
               handleErrors()
             }} type='tel' id='phone' name='phone' placeholder='e.g. +52 1234567890' className={`${errors.phone ? 'border-red-500' : 'border-light-gray'} border-2 rounded-md pl-2 py-2 md:py-3 text-sm`} value={form.phone} required
-                          />
+                           />
         </label>
 
       </div>
