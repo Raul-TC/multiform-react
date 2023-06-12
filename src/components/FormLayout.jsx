@@ -14,7 +14,6 @@ const FormLayout = () => {
   const isMonth = form.isMonth
   return (
     <form action='' className={`w-[90%] m-auto bg-white rounded-md py-5 px-4 -mt-[65px] md:m-0 md:h-full md:w-[571px] mb-24 ${completed ? 'md:items-center md:justify-center md:h-full bg-red-300' : ''}`}>
-      {/* {currentStep === 1 && ( */}
       <div className={`${currentStep === 1 ? 'flex' : 'hidden'} flex flex-col gap-3 md:gap-5`}>
         <h1 className='text-2xl font-bold text-marine-blue'>Personal Info</h1>
         <h2 className='text-cool-gray'>Personal info Please provide your name, email address, and phone number.</h2>
@@ -56,8 +55,6 @@ const FormLayout = () => {
         </label>
 
       </div>
-      {/* )} */}
-      {/* {currentStep === 2 && ( */}
       <div className={`${currentStep === 2 ? 'flex' : 'hidden'} flex flex-col gap-3`}>
         <h1 className='text-2xl font-bold text-marine-blue'>Select you Plan</h1>
         <h2 className='text-cool-gray'>You have the option of monthle or year billing.</h2>
@@ -76,17 +73,12 @@ const FormLayout = () => {
           <p className={` ${!isMonth ? 'font-bold' : ''} text-marine-blue`}>Yearly</p>
         </div>
       </div>
-      {/* )} */}
-      {/* {currentStep === 3 && ( */}
       <div className={`${currentStep === 3 ? 'flex' : 'hidden'} flex flex-col gap-3 md:gap-5`}>
         <h1 className='text-2xl font-bold text-marine-blue'>Pick add-ons</h1>
         <h2 className='text-cool-gray'>Add-ons help enhance your gaming experience. </h2>
 
         {currentStep === 3 && picks.map(el => <Picks key={el.name} name={el.name} description={el.description} price={el.price} isMonth={isMonth} addOns={form.picks} />)}
       </div>
-      {/* )} */}
-      {/* {currentStep === 4 && ( */}
-
       <div className={`${currentStep === 4 ? 'flex' : 'hidden'} flex flex-col gap-3 ${completed ? 'md:items-center md:justify-center md:h-full' : ''}`}>
         {!completed
           ? (
@@ -98,7 +90,6 @@ const FormLayout = () => {
             )
           : <CompletedForm />}
       </div>
-      {/* )} */}
     </form>
   )
 }
