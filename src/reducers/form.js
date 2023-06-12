@@ -25,40 +25,11 @@ export const FORM_ACTION_TYPES = {
   CHANGEPLAN: 'CHANGE_PLAN'
 }
 
-// const handleFormErrors = (form) => {
-//   const errors = {}
-//   const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/
-//   const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-//   const regexTelefono = /^[0-9]{10}/
-
-//   if (!regexName.test(form.name.trim())) {
-//     errors.nombre = 'El campo Nombre solo acepta letras y espacios en blanco.'
-//   }
-//   if (!form.name.trim()) {
-//     errors.nombre = 'El campo Nombre es requerido'
-//   }
-
-//   if (!regexEmail.test(form.email.trim())) {
-//     errors.correo = 'El campo Correo es incorrecto.'
-//   }
-//   if (!form.email.trim()) {
-//     errors.correo = 'El campo Correo es requerido'
-//   }
-//   if (!regexTelefono.test(form.phone.trim())) {
-//     errors.telefono = 'El campo Teléfono solo acepta 10 números'
-//   }
-//   if (!form.phone.trim()) {
-//     errors.telefono = 'El campo Teléfono es requerido'
-//   }
-
-//   return errors
-// }
 export const formReducer = (state, action) => {
   const { typeAction, payload } = action
 
   switch (typeAction) {
     case FORM_ACTION_TYPES.CHANGE_STEP: {
-      console.log(payload)
       if (payload === 'next') {
         if (state.currentStep < 4) {
           const newState = {
@@ -86,10 +57,6 @@ export const formReducer = (state, action) => {
         ...state,
         form: { ...state.form, [target.name]: target.value }
       }
-
-      // const validate = handleFormErrors(newState.form)
-
-      // console.log(validate)
       return newState
     }
 
